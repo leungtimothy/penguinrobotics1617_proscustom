@@ -1,0 +1,93 @@
+01:28:40 **** Incremental Build of configuration Default for project robot_blank_template ****
+make all 
+LN ./bin/auto.o ./bin/init.o ./bin/opcontrol.o -lgcc -lm to bin/output.elf
+arm-none-eabi-gcc.exe: error: ../../PROS_2.11.0_pengu/bin/*.o: No such file or directory
+arm-none-eabi-gcc.exe: error: ../../pengu_lib/bin/*.o: No such file or directory
+make: *** [bin/output.elf] Error 1
+01:36:34 **** Incremental Build of configuration Default for project PROS_2.11.0_pengu ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+01:36:35 **** Incremental Build of configuration Default for project pengu_lib ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+# Assembly source file management
+01:36:35 **** Incremental Build of configuration Default for project robot_blank_template ****
+make all 
+LN ./bin/auto.o ./bin/init.o ./bin/opcontrol.o -lgcc -lm to bin/output.elf
+arm-none-eabi-gcc.exe: error: /../../PROS_2.11.0_pengu/bin/*.o: No such file or directory
+arm-none-eabi-gcc.exe: error: /../../pengu_lib/bin/*.o: No such file or directory
+make: *** [bin/output.elf] Error 1
+01:37:04 **** Incremental Build of configuration Default for project PROS_2.11.0_pengu ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+01:37:04 **** Incremental Build of configuration Default for project pengu_lib ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+# Assembly source file management
+01:37:04 **** Incremental Build of configuration Default for project robot_blank_template ****
+make all 
+LN ./bin/auto.o ./bin/init.o ./bin/opcontrol.o -lgcc -lm to bin/output.elf
+arm-none-eabi-gcc.exe: error: ../../pengu_lib/bin/*.o: No such file or directory
+make: *** [bin/output.elf] Error 1
+01:37:19 **** Incremental Build of configuration Default for project PROS_2.11.0_pengu ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+01:37:19 **** Incremental Build of configuration Default for project pengu_lib ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+# Assembly source file management
+01:37:19 **** Incremental Build of configuration Default for project robot_blank_template ****
+make all 
+LN ./bin/auto.o ./bin/init.o ./bin/opcontrol.o -lgcc -lm to bin/output.elf
+   text	   data	    bss	    dec	    hex	filename
+  13852	      0	   3840	  17692	   451c	./bin/output.elf
+arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+# Assembly source file management
+01:37:21 **** Incremental Build of configuration Default for project PROS_2.11.0_pengu ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+01:37:21 **** Incremental Build of configuration Default for project pengu_lib ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+# Assembly source file management
+01:37:22 **** Incremental Build of configuration Default for project robot_blank_template ****
+make all 
+14:49:12 **** Incremental Build of configuration Default for project PROS_2.11.0_pengu ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+14:49:13 **** Build of configuration Default for project pengu_lib ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+# Assembly source file management
+14:49:13 **** Incremental Build of configuration Default for project robot_blank_template ****
+make all 

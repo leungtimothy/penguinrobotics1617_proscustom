@@ -1,0 +1,10 @@
+14:49:13 **** Build of configuration Default for project pengu_lib ****
+make all 
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+# Assembly source file management
+
+14:49:13 Build Finished (took 233ms)
+
