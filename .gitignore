@@ -4,18 +4,15 @@
 ### Eclipse ###
 
 .metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.loadpath
-.recommenders
-
-# Eclipse Core
-#.project
+# bin/
+# tmp/
+# *.tmp
+# *.bak
+# *.swp
+# *~.nib
+# local.properties
+# .loadpath
+# .recommenders
 
 # External tool builders
 .externalToolBuilders/
@@ -25,9 +22,6 @@ local.properties
 
 # PyDev specific (Python IDE for Eclipse)
 *.pydevproject
-
-# CDT-specific (C/C++ Development Tooling)
-#.cproject
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
@@ -68,11 +62,6 @@ local.properties
 *.gch
 *.pch
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
 
 # Shared objects (inc. Windows DLLs)
 *.dll
