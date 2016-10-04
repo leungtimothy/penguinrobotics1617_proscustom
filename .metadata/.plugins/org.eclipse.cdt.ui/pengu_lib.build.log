@@ -1,91 +1,20 @@
-23:44:09 **** Incremental Build of configuration Default for project pengu_lib ****
+18:57:34 **** Build of configuration Default for project pengu_lib ****
 make all 
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include drive.c
-In file included from ../include/drive.h:6:0,
-                 from drive.c:1:
-../include/robot.h:7:2: error: unknown type name 'DriveType'
-../include/robot.h:8:2: error: unknown type name 'DriveMotors'
-../include/robot.h:9:2: error: unknown type name 'DriveChannels'
-drive.c: In function 'motorsGetSize':
-drive.c:11:35: error: request for member 'left' in something not a structure or union
-drive.c:11:67: error: request for member 'left' in something not a structure or union
-drive.c:14:35: error: request for member 'right' in something not a structure or union
-drive.c:14:68: error: request for member 'right' in something not a structure or union
-drive.c:17:35: error: request for member 'frontLeft' in something not a structure or union
-drive.c:17:72: error: request for member 'frontLeft' in something not a structure or union
-drive.c:20:35: error: request for member 'frontRight' in something not a structure or union
-drive.c:20:73: error: request for member 'frontRight' in something not a structure or union
-drive.c:23:35: error: request for member 'backLeft' in something not a structure or union
-drive.c:23:71: error: request for member 'backLeft' in something not a structure or union
-drive.c:26:35: error: request for member 'backLeft' in something not a structure or union
-drive.c:26:71: error: request for member 'backRight' in something not a structure or union
-drive.c:29:35: error: request for member 'strafe' in something not a structure or union
-drive.c:29:69: error: request for member 'strafe' in something not a structure or union
-drive.c: In function 'driveAddMotor':
-drive.c:51:22: error: request for member 'left' in something not a structure or union
-drive.c:55:22: error: request for member 'right' in something not a structure or union
-drive.c:59:22: error: request for member 'strafe' in something not a structure or union
-drive.c:48:3: warning: enumeration value 'FRONT_LEFT' not handled in switch [-Wswitch]
-drive.c:48:3: warning: enumeration value 'FRONT_RIGHT' not handled in switch [-Wswitch]
-drive.c:48:3: warning: enumeration value 'BACK_LEFT' not handled in switch [-Wswitch]
-drive.c:48:3: warning: enumeration value 'BACK_RIGHT' not handled in switch [-Wswitch]
-drive.c:66:9: error: request for member 'driveMotors' in something not a structure or union
-drive.c:70:9: error: request for member 'driveMotors' in something not a structure or union
-drive.c:74:9: error: request for member 'driveMotors' in something not a structure or union
-drive.c:78:9: error: request for member 'driveMotors' in something not a structure or union
-drive.c:63:3: warning: enumeration value 'LEFT_SIDE' not handled in switch [-Wswitch]
-drive.c:63:3: warning: enumeration value 'RIGHT_SIDE' not handled in switch [-Wswitch]
-drive.c:63:3: warning: enumeration value 'STRAFE' not handled in switch [-Wswitch]
-drive.c: In function 'motorSetPower':
-drive.c:90:24: error: request for member 'left' in something not a structure or union
-drive.c:92:32: error: request for member 'left' in something not a structure or union
-drive.c:92:67: error: request for member 'left' in something not a structure or union
-drive.c:92:93: error: request for member 'left' in something not a structure or union
-drive.c:96:24: error: request for member 'right' in something not a structure or union
-drive.c:98:32: error: request for member 'right' in something not a structure or union
-drive.c:98:68: error: request for member 'right' in something not a structure or union
-drive.c:98:95: error: request for member 'right' in something not a structure or union
-drive.c:88:3: warning: enumeration value 'X' not handled in switch [-Wswitch]
-drive.c:88:3: warning: enumeration value 'Y' not handled in switch [-Wswitch]
-drive.c:88:3: warning: enumeration value 'YAW' not handled in switch [-Wswitch]
-drive.c:108:24: error: request for member 'x' in something not a structure or union
-drive.c:111:24: error: request for member 'y' in something not a structure or union
-drive.c:114:24: error: request for member 'yaw' in something not a structure or union
-drive.c:106:3: warning: enumeration value 'LEFT' not handled in switch [-Wswitch]
-drive.c:106:3: warning: enumeration value 'RIGHT' not handled in switch [-Wswitch]
-drive.c:120:32: error: request for member 'frontLeft' in something not a structure or union
-drive.c:121:28: error: request for member 'x' in something not a structure or union
-drive.c:121:53: error: request for member 'y' in something not a structure or union
-drive.c:121:78: error: request for member 'yaw' in something not a structure or union
-drive.c:121:104: error: request for member 'frontLeft' in something not a structure or union
-drive.c:125:32: error: request for member 'frontRight' in something not a structure or union
-drive.c:126:28: error: request for member 'x' in something not a structure or union
-drive.c:126:53: error: request for member 'y' in something not a structure or union
-drive.c:126:78: error: request for member 'yaw' in something not a structure or union
-drive.c:126:104: error: request for member 'frontRight' in something not a structure or union
-drive.c:130:32: error: request for member 'backLeft' in something not a structure or union
-drive.c:131:28: error: request for member 'x' in something not a structure or union
-drive.c:131:53: error: request for member 'y' in something not a structure or union
-drive.c:131:78: error: request for member 'yaw' in something not a structure or union
-drive.c:131:104: error: request for member 'backLeft' in something not a structure or union
-drive.c:135:32: error: request for member 'backRight' in something not a structure or union
-drive.c:136:28: error: request for member 'x' in something not a structure or union
-drive.c:136:53: error: request for member 'y' in something not a structure or union
-drive.c:136:78: error: request for member 'yaw' in something not a structure or union
-drive.c:136:104: error: request for member 'backRight' in something not a structure or union
-drive.c:140:32: error: request for member 'left' in something not a structure or union
-drive.c:141:28: error: request for member 'y' in something not a structure or union
-drive.c:141:53: error: request for member 'x' in something not a structure or union
-drive.c:141:77: error: request for member 'left' in something not a structure or union
-drive.c:145:32: error: request for member 'right' in something not a structure or union
-drive.c:146:28: error: request for member 'y' in something not a structure or union
-drive.c:146:53: error: request for member 'x' in something not a structure or union
-drive.c:146:77: error: request for member 'right' in something not a structure or union
-drive.c:150:32: error: request for member 'strafe' in something not a structure or union
-drive.c:150:69: error: request for member 'yaw' in something not a structure or union
-drive.c:150:94: error: request for member 'strafe' in something not a structure or union
-make[1]: *** [../bin/drive.o] Error 1
-make: *** [src] Error 2
+CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include auto_functions.c
+CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include libpengu.c
+libpengu.c: In function 'motorSetPower':
+libpengu.c:59:5: warning: enumeration value 'X' not handled in switch [-Wswitch]
+libpengu.c:59:5: warning: enumeration value 'Y' not handled in switch [-Wswitch]
+libpengu.c:59:5: warning: enumeration value 'YAW' not handled in switch [-Wswitch]
+libpengu.c:81:5: warning: enumeration value 'LEFT' not handled in switch [-Wswitch]
+libpengu.c:81:5: warning: enumeration value 'RIGHT' not handled in switch [-Wswitch]
+CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include pid.c
+CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include util.c
+#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
+#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
+#@arm-none-eabi-size  ./bin/output.elf
+#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+# Assembly source file management
 
-23:44:09 Build Finished (took 520ms)
+18:57:35 Build Finished (took 1s.201ms)
 

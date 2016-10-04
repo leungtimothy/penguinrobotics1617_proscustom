@@ -5,9 +5,14 @@
 #define BACKWARD -1
 
 typedef struct {
-	short port;
-	int power;
-	int direction;
+  short port;
+  int power;
+  int direction;
 } Motor;
+
+typedef struct {
+  int size;
+  Motor motors[];
+} MotorArray;
 
 #endif

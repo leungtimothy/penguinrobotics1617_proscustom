@@ -1,6 +1,8 @@
 #ifndef PID_H_
 #define PID_H_
 
+#include <API.h>
+
 typedef struct {
 	float kp;
 	float ki;
@@ -13,8 +15,8 @@ typedef struct {
 	int limitLower;
 } PID;
 
-void pidInit(PID pid, float kp, float ki, float kd, int limitUpper, int limitLower);
+void pidInit(PID *pid, float kp, float ki, float kd, int limitUpper, int limitLower);
 
-int pidCalculate(PID pid, int input, int target);
+int pidCalculate(PID *pid, int input, int target);
 
 #endif

@@ -1,5 +1,7 @@
-23:44:09 **** Incremental Build of configuration Default for project robot_blank_template ****
-make all 
+18:57:27 **** Clean-only build of configuration Default for project robot_blank_template ****
+make clean 
+rm -f ./bin/output.elf
+rm -rf ./bin
 
-23:44:10 Build Finished (took 697ms)
+18:57:28 Build Finished (took 212ms)
 

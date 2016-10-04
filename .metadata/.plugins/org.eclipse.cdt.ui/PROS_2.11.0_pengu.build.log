@@ -1,9 +1,7 @@
-23:44:08 **** Incremental Build of configuration Default for project PROS_2.11.0_pengu ****
-make all 
-#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
-#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -lgcc -lm -o bin/output.elf
-#@arm-none-eabi-size  ./bin/output.elf
-#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
+18:57:27 **** Clean-only build of configuration Default for project PROS_2.11.0_pengu ****
+make clean 
+rm -f ./bin/output.elf
+rm -rf ./bin
 
-23:44:09 Build Finished (took 684ms)
+18:57:27 Build Finished (took 192ms)
 

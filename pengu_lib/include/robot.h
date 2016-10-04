@@ -4,9 +4,9 @@
 #include "drive.h"
 
 typedef struct {
-	DriveType driveType;
-	DriveMotors driveMotors;
-	DriveChannels driveChannels;
+  DriveType driveType;
+  DriveMotors driveMotors;
+  DriveChannels driveChannels;
 } Robot;
 
 #endif
