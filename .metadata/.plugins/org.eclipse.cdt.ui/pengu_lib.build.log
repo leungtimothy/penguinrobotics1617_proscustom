@@ -1,20 +1,7 @@
-18:57:34 **** Build of configuration Default for project pengu_lib ****
-make all 
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include auto_functions.c
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include libpengu.c
-libpengu.c: In function 'motorSetPower':
-libpengu.c:59:5: warning: enumeration value 'X' not handled in switch [-Wswitch]
-libpengu.c:59:5: warning: enumeration value 'Y' not handled in switch [-Wswitch]
-libpengu.c:59:5: warning: enumeration value 'YAW' not handled in switch [-Wswitch]
-libpengu.c:81:5: warning: enumeration value 'LEFT' not handled in switch [-Wswitch]
-libpengu.c:81:5: warning: enumeration value 'RIGHT' not handled in switch [-Wswitch]
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include pid.c
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include util.c
-#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
-#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
-#@arm-none-eabi-size  ./bin/output.elf
-#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
-# Assembly source file management
+19:56:27 **** Clean-only build of configuration Default for project pengu_lib ****
+make clean 
+rm -f ./bin/output.elf
+rm -rf ./bin
 
-18:57:35 Build Finished (took 1s.201ms)
+19:56:27 Build Finished (took 132ms)
 

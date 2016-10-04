@@ -52,96 +52,97 @@
  *----------------------------------------------------------*/
 
 void listInit(OSList *list) {
-	OSMiniListItem *end = (OSMiniListItem*)&(list->end);
-	/* The list structure contains a list item which is used to mark the
-	 end of the list.  To initialise the list the list end is inserted
-	 as the only list entry. */
-	list->index = (OSListItem*)end;
-	/* The list end value is the highest possible value in the list to
-	 ensure it remains at the end of the list. */
-	end->value = MAX_DELAY;
-	/* The list end next and previous pointers point to itself so we know
-	 when the list is empty. */
-	end->next = (OSListItem*)end;
-	end->previous = (OSListItem*)end;
-	list->size = 0;
+  OSMiniListItem *end = (OSMiniListItem *)&(list->end);
+  /* The list structure contains a list item which is used to mark the
+   end of the list.  To initialise the list the list end is inserted
+   as the only list entry. */
+  list->index = (OSListItem *)end;
+  /* The list end value is the highest possible value in the list to
+   ensure it remains at the end of the list. */
+  end->value = MAX_DELAY;
+  /* The list end next and previous pointers point to itself so we know
+   when the list is empty. */
+  end->next = (OSListItem *)end;
+  end->previous = (OSListItem *)end;
+  list->size = 0;
 }
 
 void listInitItem(OSListItem *item) {
-	/* Make sure the list item is not recorded as being on a list. */
-	item->container = NULL;
+  /* Make sure the list item is not recorded as being on a list. */
+  item->container = NULL;
 }
 
 void listInsertEnd(OSList *list, OSListItem *newItem) {
-	/* Insert a new list item into list, but rather than sort the list,
-	 makes the new list item the last item to be removed by a call to
-	 listGetNextValue.  This means it has to be the item pointed to by
-	 the index member. */
-	OSListItem *index = (OSListItem*)list->index;
-	/* Fix up links */
-	newItem->next = index->next;
-	newItem->previous = list->index;
-	index->next->previous = (volatile OSListItem*)newItem;
-	index->next = (volatile OSListItem*)newItem;
-	list->index = (volatile OSListItem*)newItem;
-	/* Remember which list the item is in. */
-	newItem->container = (void*)list;
-	(list->size)++;
+  /* Insert a new list item into list, but rather than sort the list,
+   makes the new list item the last item to be removed by a call to
+   listGetNextValue.  This means it has to be the item pointed to by
+   the index member. */
+  OSListItem *index = (OSListItem *)list->index;
+  /* Fix up links */
+  newItem->next = index->next;
+  newItem->previous = list->index;
+  index->next->previous = (volatile OSListItem *)newItem;
+  index->next = (volatile OSListItem *)newItem;
+  list->index = (volatile OSListItem *)newItem;
+  /* Remember which list the item is in. */
+  newItem->container = (void *)list;
+  (list->size)++;
 }
 
 void listInsert(OSList *list, OSListItem *newItem) {
-	volatile OSListItem *iterator;
-	clock_t value;
-	/* Insert the new list item into the list, sorted in value order. */
-	value = newItem->value;
-	/* If the list already contains a list item with the same item value then
-	 the new list item should be placed after it.  This ensures that TCB's which
-	 are stored in ready lists (all of which have the same item value)
-	 get an equal share of the CPU.  However, if the item is the same as
-	 the back marker the iteration loop below will not end.  This means we need
-	 to guard against this by checking the value first and modifying the
-	 algorithm slightly if necessary. */
-	if (value == MAX_DELAY)
-		iterator = list->end.previous;
-	else {
-		/* *** NOTE ***********************************************************
-		 If you find your application is crashing here then likely causes are:
-		 1) Stack overflow
-		 2) Incorrect interrupt priority assignment, especially on Cortex-M3
-		 parts where numerically high priority values denote low actual
-		 interrupt priories, which can seem counter intuitive.
-		 3) Calling an API function from within a critical section or when
-		 the scheduler is suspended.
-		 4) Using a queue or semaphore before it has been initialised or
-		 before the scheduler has been started (are interrupts firing
-		 before taskStartScheduler() has been called?).
-		 **********************************************************************/
-		for (iterator = (OSListItem*)&(list->end); iterator->next->value <= value;
-				iterator = iterator->next);
-			/* There is nothing to do here, we are just iterating to the
-			 wanted insertion position. */
-	}
-	/* Set links */
-	newItem->next = iterator->next;
-	newItem->next->previous = (volatile OSListItem*)newItem;
-	newItem->previous = iterator;
-	iterator->next = (volatile OSListItem*)newItem;
-	/* Remember which list the item is in.  This allows fast removal of the
-	 item later. */
-	newItem->container = (void*)list;
-	(list->size)++;
+  volatile OSListItem *iterator;
+  clock_t value;
+  /* Insert the new list item into the list, sorted in value order. */
+  value = newItem->value;
+  /* If the list already contains a list item with the same item value then
+   the new list item should be placed after it.  This ensures that TCB's which
+   are stored in ready lists (all of which have the same item value)
+   get an equal share of the CPU.  However, if the item is the same as
+   the back marker the iteration loop below will not end.  This means we need
+   to guard against this by checking the value first and modifying the
+   algorithm slightly if necessary. */
+  if (value == MAX_DELAY)
+    iterator = list->end.previous;
+  else {
+    /* **************************************************************
+     If you find your application is crashing here then likely causes are:
+     1) Stack overflow
+     2) Incorrect interrupt priority assignment, especially on Cortex-M3
+     parts where numerically high priority values denote low actual
+     interrupt priories, which can seem counter intuitive.
+     3) Calling an API function from within a critical section or when
+     the scheduler is suspended.
+     4) Using a queue or semaphore before it has been initialised or
+     before the scheduler has been started (are interrupts firing
+     before taskStartScheduler() has been called?).
+     **********************************************************************/
+    for (iterator = (OSListItem *)&(list->end); iterator->next->value <= value;
+         iterator = iterator->next)
+      ;
+    /* There is nothing to do here, we are just iterating to the
+     wanted insertion position. */
+  }
+  /* Set links */
+  newItem->next = iterator->next;
+  newItem->next->previous = (volatile OSListItem *)newItem;
+  newItem->previous = iterator;
+  iterator->next = (volatile OSListItem *)newItem;
+  /* Remember which list the item is in.  This allows fast removal of the
+   item later. */
+  newItem->container = (void *)list;
+  (list->size)++;
 }
 
 void listRemove(OSListItem *itemToRemove) {
-	OSList *list;
-	itemToRemove->next->previous = itemToRemove->previous;
-	itemToRemove->previous->next = itemToRemove->next;
-	/* The list item knows which list it is in.  Obtain the list from the list
-	 item. */
-	list = (OSList*)itemToRemove->container;
-	/* Make sure the index is left pointing to a valid item. */
-	if (list->index == itemToRemove)
-		list->index = itemToRemove->previous;
-	itemToRemove->container = NULL;
-	(list->size)--;
+  OSList *list;
+  itemToRemove->next->previous = itemToRemove->previous;
+  itemToRemove->previous->next = itemToRemove->next;
+  /* The list item knows which list it is in.  Obtain the list from the list
+   item. */
+  list = (OSList *)itemToRemove->container;
+  /* Make sure the index is left pointing to a valid item. */
+  if (list->index == itemToRemove)
+    list->index = itemToRemove->previous;
+  itemToRemove->container = NULL;
+  (list->size)--;
 }

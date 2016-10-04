@@ -1,56 +1,8 @@
 #include "libpengu.h"
 
-void robotSetDriveType(Robot *robot, DriveType driveType) {
-  robot->driveType = driveType;
-}
-
-void robotAddDriveMotors(Robot *robot, Motor motors[], int size,
-                         DriveMotorLocations location) {
-  switch (location) {
-  case LEFT_SIDE:
-    for (int i = 0; i < size; i++) {
-      robot->driveMotors.left.motors[i] = motors[i];
-    }
-    robot->driveMotors.left.size = size;
-    break;
-  case RIGHT_SIDE:
-    for (int i = 0; i < size; i++) {
-      robot->driveMotors.right.motors[i] = motors[i];
-    }
-    robot->driveMotors.right.size = size;
-    break;
-
-  case FRONT_LEFT:
-    for (int i = 0; i < size; i++) {
-      robot->driveMotors.frontLeft.motors[i] = motors[i];
-    }
-    robot->driveMotors.frontLeft.size = size;
-    break;
-  case FRONT_RIGHT:
-    for (int i = 0; i < size; i++) {
-      robot->driveMotors.frontRight.motors[i] = motors[i];
-    }
-    robot->driveMotors.frontRight.size = size;
-    break;
-  case BACK_LEFT:
-    for (int i = 0; i < size; i++) {
-      robot->driveMotors.backLeft.motors[i] = motors[i];
-    }
-    robot->driveMotors.backLeft.size = size;
-    break;
-  case BACK_RIGHT:
-    for (int i = 0; i < size; i++) {
-      robot->driveMotors.backRight.motors[i] = motors[i];
-    }
-    robot->driveMotors.backRight.size = size;
-    break;
-  case STRAFE:
-    for (int i = 0; i < size; i++) {
-      robot->driveMotors.strafe.motors[i] = motors[i];
-    }
-    robot->driveMotors.strafe.size = size;
-    break;
-  }
+void motorInit(Motor *motor, short port, int direction) {
+	motor->port = port;
+	motor->direction = direction;
 }
 
 void motorSetPower(Robot *robot, Channels channel, int power) {
@@ -137,6 +89,55 @@ void motorSetPower(Robot *robot, Channels channel, int power) {
                      robot->driveMotors.strafe.motors[i].direction);
       }
     }
+    break;
+  }
+}
+
+void robotAddDriveMotors(Robot *robot, Motor motors[], int size,
+                         DriveMotorLocations location) {
+  switch (location) {
+  case LEFT_SIDE:
+    for (int i = 0; i < size; i++) {
+      robot->driveMotors.left.motors[i] = motors[i];
+    }
+    robot->driveMotors.left.size = size;
+    break;
+  case RIGHT_SIDE:
+    for (int i = 0; i < size; i++) {
+      robot->driveMotors.right.motors[i] = motors[i];
+    }
+    robot->driveMotors.right.size = size;
+    break;
+
+  case FRONT_LEFT:
+    for (int i = 0; i < size; i++) {
+      robot->driveMotors.frontLeft.motors[i] = motors[i];
+    }
+    robot->driveMotors.frontLeft.size = size;
+    break;
+  case FRONT_RIGHT:
+    for (int i = 0; i < size; i++) {
+      robot->driveMotors.frontRight.motors[i] = motors[i];
+    }
+    robot->driveMotors.frontRight.size = size;
+    break;
+  case BACK_LEFT:
+    for (int i = 0; i < size; i++) {
+      robot->driveMotors.backLeft.motors[i] = motors[i];
+    }
+    robot->driveMotors.backLeft.size = size;
+    break;
+  case BACK_RIGHT:
+    for (int i = 0; i < size; i++) {
+      robot->driveMotors.backRight.motors[i] = motors[i];
+    }
+    robot->driveMotors.backRight.size = size;
+    break;
+  case STRAFE:
+    for (int i = 0; i < size; i++) {
+      robot->driveMotors.strafe.motors[i] = motors[i];
+    }
+    robot->driveMotors.strafe.size = size;
     break;
   }
 }

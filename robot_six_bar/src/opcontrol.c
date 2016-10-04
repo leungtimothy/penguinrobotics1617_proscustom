@@ -11,6 +11,10 @@
  */
 
 #include "main.h"
+#include "init.c"
+#include "../../pengu_lib/include/libpengu.h"
+
+#define JOYSTICK_DEADZONE 15
 
 /*
  * Runs the user operator control code. This function will be started in its own task with the
@@ -31,7 +35,14 @@
  */
 void operatorControl() {
 	while (1) {
+		int joystick_1_1 = abs(joystickGetAnalog(1,1)) > JOYSTICK_DEADZONE ? joystickGetAnalog(1,1) : 0;
+		int joystick_1_3 = abs(joystickGetAnalog(1,3)) > JOYSTICK_DEADZONE ? joystickGetAnalog(1,3) : 0;
+		int joystick_1_4 = abs(joystickGetAnalog(1,4)) > JOYSTICK_DEADZONE ? joystickGetAnalog(1,4) : 0;
+
+		motorSetPower(&robot, X, joystick_1_4);
+		motorSetPower(&robot, Y, joystick_1_3);
+		motorSetPower(&robot, YAW, joystick_1_1);
+
 		delay(20);
-		printf("sds");
 	}
 }

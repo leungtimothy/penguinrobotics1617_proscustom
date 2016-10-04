@@ -1,7 +1,7 @@
-18:57:27 **** Clean-only build of configuration Default for project robot_blank_template ****
+19:56:27 **** Clean-only build of configuration Default for project robot_blank_template ****
 make clean 
 rm -f ./bin/output.elf
 rm -rf ./bin
 
-18:57:28 Build Finished (took 212ms)
+19:56:28 Build Finished (took 190ms)
 

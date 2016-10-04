@@ -1,7 +1,22 @@
-18:57:27 **** Clean-only build of configuration Default for project PROS_2.11.0_pengu ****
-make clean 
-rm -f ./bin/output.elf
-rm -rf ./bin
+19:59:04 **** Build of configuration Default for project PROS_2.11.0_pengu ****
+make all 
+AS encoder_isr.s
+AS startup.s
+CC -I../include -I../src API.c
+CC -I../include -I../src comm.c
+CC -I../include -I../src encoder.c
+CC -I../include -I../src fs.c
+CC -I../include -I../src gyro.c
+CC -I../include -I../src i2c.c
+CC -I../include -I../src ime.c
+CC -I../include -I../src invoke.c
+CC -I../include -I../src io.c
+CC -I../include -I../src kernel.c
+CC -I../include -I../src list.c
+CC -I../include -I../src malloc.c
+CC -I../include -I../src motorcontrol.c
+CC -I../include -I../src printf.c
+Command canceled
 
-18:57:27 Build Finished (took 192ms)
+19:59:07 Build Cancelled (took 3s.179ms)
 

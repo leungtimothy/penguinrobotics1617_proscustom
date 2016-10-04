@@ -5,11 +5,11 @@
 
 #include "robot.h"
 
-void robotSetDriveType(Robot *robot, DriveType driveType);
+void motorInit(Motor *motor, short port, int direction);
+
+void motorSetPower(Robot *robot, Channels channel, int power);
 
 void robotAddDriveMotors(Robot *robot, Motor motors[], int size,
                          DriveMotorLocations location);
-
-void motorSetPower(Robot *robot, Channels channel, int power);
 
 #endif

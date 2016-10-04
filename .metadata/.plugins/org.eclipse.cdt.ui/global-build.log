@@ -1,17 +1,6 @@
-18:57:34 **** Build of configuration Default for project pengu_lib ****
+19:59:10 **** Incremental Build of configuration Default for project robot_six_bar ****
 make all 
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include auto_functions.c
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include libpengu.c
-libpengu.c: In function 'motorSetPower':
-libpengu.c:59:5: warning: enumeration value 'X' not handled in switch [-Wswitch]
-libpengu.c:59:5: warning: enumeration value 'Y' not handled in switch [-Wswitch]
-libpengu.c:59:5: warning: enumeration value 'YAW' not handled in switch [-Wswitch]
-libpengu.c:81:5: warning: enumeration value 'LEFT' not handled in switch [-Wswitch]
-libpengu.c:81:5: warning: enumeration value 'RIGHT' not handled in switch [-Wswitch]
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include pid.c
-CC -I../include -I../src -IE:\Workspace\PROS\include -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include util.c
-#@echo LN ./bin/*.o -lgcc -lm to bin/output.elf
-#@arm-none-eabi-gcc -Wall -mthumb -mcpu=cortex-m3 -mlittle-endian -nostartfiles -Wl,-static -Bfirmware -Wl,-T -Xlinker firmware/cortex.ld -Wl,--gc-sections ./bin/*.o -I..\..\PROS_2.11.0_pengu\bin\*.o -I..\..\pengu_lib\bin\*.o -lgcc -lm -o bin/output.elf
-#@arm-none-eabi-size  ./bin/output.elf
-#arm-none-eabi-objcopy ./bin/output.elf -O binary ./bin/output.bin
-# Assembly source file management
+CC -I../include -I../src -I..\..\PROS_2.11.0_pengu\include -I..\..\pengu_lib\include init.c
+LN ./bin/auto.o ./bin/init.o ./bin/opcontrol.o -lgcc -lm to bin/output.elf
+arm-none-eabi-gcc.exe: error: ../pengu_lib/bin/*.o: No such file or directory
+make: *** [bin/output.elf] Error 1

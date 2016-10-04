@@ -63,7 +63,7 @@ extern "C" {
  * returns (via a pointer parameter) a TaskHandle variable that can then
  * be used as a parameter to taskDelete to delete the task.
  */
-typedef void * TaskHandle;
+typedef void *TaskHandle;
 
 /**
  * Function signature of tasks.
@@ -77,7 +77,8 @@ typedef void (*TaskCode)(void *);
 #define TASK_MAX 16
 
 /**
- * Maximum number of available task priorities, which run from 0 to (TASK_MAX_PRIORITIES - 1).
+ * Maximum number of available task priorities, which run from 0 to
+ * (TASK_MAX_PRIORITIES - 1).
  */
 #define TASK_MAX_PRIORITIES 6
 /**
@@ -96,7 +97,7 @@ typedef void (*TaskCode)(void *);
 /**
  * Minimum stack depth for a task.
  */
-#define TASK_MINIMAL_STACK_SIZE	64
+#define TASK_MINIMAL_STACK_SIZE 64
 /**
  * Default stack depth for a task.
  */
@@ -111,17 +112,20 @@ typedef void (*TaskCode)(void *);
  */
 #define TASK_RUNNING 1
 /**
- * Constant returned from taskGetState() when the task is exists and is available to run, but
+ * Constant returned from taskGetState() when the task is exists and is
+ * available to run, but
  * not currently running.
  */
 #define TASK_RUNNABLE 2
 /**
- * Constant returned from taskGetState() when the task is delayed or blocked waiting for a
+ * Constant returned from taskGetState() when the task is delayed or blocked
+ * waiting for a
  * semaphore, mutex, or I/O operation.
  */
 #define TASK_SLEEPING 3
 /**
- * Constant returned from taskGetState() when the task is suspended using taskSuspend().
+ * Constant returned from taskGetState() when the task is suspended using
+ * taskSuspend().
  */
 #define TASK_SUSPENDED 4
 
@@ -146,14 +150,14 @@ typedef void (*TaskCode)(void *);
  * @return A handle by which the created task can be referenced, or NULL if an
  * error occurred.
  */
-TaskHandle taskCreate(TaskCode taskCode, const unsigned int stackDepth, void *parameters,
-	const unsigned int priority);
+TaskHandle taskCreate(TaskCode taskCode, const unsigned int stackDepth,
+                      void *parameters, const unsigned int priority);
 
 /**
  * Remove a task from the RTOS real time kernels management.  The task being
  * deleted will be removed from all ready, blocked, suspended and event lists.
  *
- * NOTE:  The idle task is responsible for freeing the kernel allocated
+ * The idle task is responsible for freeing the kernel allocated
  * memory from tasks that have been deleted.  It is therefore important that
  * the idle task is not starved of microcontroller processing time if your
  * application makes any calls to taskDelete().  Memory allocated by the
@@ -193,12 +197,17 @@ void taskDelay(const unsigned long ticksToDelay);
  * Delays the current task until a specified time.  This function can
  * be used by cyclical tasks to ensure a constant execution frequency.
  *
- * Whereas taskDelay() specifies a wake time relative to the time at which the function
- * is called, taskDelayUntil() specifies the absolute (exact) time at which it wishes to
- * unblock.  Storing the loop start time and delaying until an offset is effective.
+ * Whereas taskDelay() specifies a wake time relative to the time at which the
+ * function
+ * is called, taskDelayUntil() specifies the absolute (exact) time at which it
+ * wishes to
+ * unblock.  Storing the loop start time and delaying until an offset is
+ * effective.
  *
- * @param previousWakeTime Pointer to a variable that holds the time at which the
- * task was last unblocked.  The variable must be initialised with the current time
+ * @param previousWakeTime Pointer to a variable that holds the time at which
+ * the
+ * task was last unblocked.  The variable must be initialised with the current
+ * time
  * prior to its first use.  Following this the variable is automatically updated
  * within taskDelayUntil().
  *
@@ -207,7 +216,8 @@ void taskDelay(const unsigned long ticksToDelay);
  * same cycleTime parameter value will cause the task to execute with
  * a fixed interface period.
  */
-void taskDelayUntil(unsigned long *previousWakeTime, const unsigned long cycleTime);
+void taskDelayUntil(unsigned long *previousWakeTime,
+                    const unsigned long cycleTime);
 
 /**
  * Obtain the priority of a task.
@@ -263,14 +273,18 @@ void taskResume(TaskHandle taskToResume);
 bool taskResumeISR(TaskHandle taskToResume);
 
 /**
- * Retrieves the state of the specified task. Note that the state of tasks which have died may
- * be re-used for future tasks, causing the value returned by this function to reflect a
+ * Retrieves the state of the specified task. Note that the state of tasks which
+ * have died may
+ * be re-used for future tasks, causing the value returned by this function to
+ * reflect a
  * different task than possibly intended in this case.
  *
- * @param task Handle to the task to query. Passing NULL will query the current task status
+ * @param task Handle to the task to query. Passing NULL will query the current
+ * task status
  * (which will, by definition, be TASK_RUNNING if this call returns)
  *
- * @return A value reflecting the task's status, one of the constants TASK_DEAD, TASK_RUNNING,
+ * @return A value reflecting the task's status, one of the constants TASK_DEAD,
+ * TASK_RUNNING,
  * TASK_RUNNABLE, TASK_SLEEPING, or TASK_SUSPENDED
  */
 unsigned int taskGetState(TaskHandle task);
